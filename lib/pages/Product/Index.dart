@@ -13,14 +13,14 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
-  final ProductService firestoreService = ProductService();
+  final ProductService productService = ProductService();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Products')),
       body: StreamBuilder<List<Product>>(
-        stream: firestoreService.getProducts(),
+        stream: productService.getProducts(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) return Center(child: CircularProgressIndicator());
           final products = snapshot.data!;
@@ -36,6 +36,9 @@ class _SecondPageState extends State<SecondPage> {
                   children: [
                     IconButton(
                       icon: Icon(Icons.edit),
+                      style: ButtonStyle(
+                        foregroundColor: MaterialStateProperty.all(Colors.blue),
+                      ),
                       onPressed: () => Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -45,10 +48,13 @@ class _SecondPageState extends State<SecondPage> {
                     ),
                     IconButton(
                       icon: Icon(Icons.delete),
+                      style: ButtonStyle(
+                        foregroundColor: MaterialStateProperty.all(Colors.red),
+                      ),
                       onPressed: () async {
                         if (product.id != null && product.id!.isNotEmpty) {
                           try {
-                            await firestoreService.deleteProduct(product.id!);
+                            await productService.deleteProduct(product.id!);
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text('Product deleted successfully.')),
                             );
