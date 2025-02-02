@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/services/firestore_service.dart';
 import 'package:flutter_application_1/models/product_model.dart';
+import 'package:flutter_application_1/services/product_service.dart';
 
 class CreateProductForm extends StatefulWidget {
   @override
@@ -11,7 +11,7 @@ class _CreateProductFormState extends State<CreateProductForm> {
   final _formKey = GlobalKey<FormState>();
   late TextEditingController _nameController;
   late TextEditingController _priceController;
-  final FirestoreService firestoreService = FirestoreService();
+  final ProductService firestoreService = ProductService();
 
   @override
   void initState() {

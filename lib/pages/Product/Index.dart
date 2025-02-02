@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/services/firestore_service.dart';
+
 import 'package:flutter_application_1/pages/Product/Create.dart';
 import 'package:flutter_application_1/models/product_model.dart';
 import 'package:flutter_application_1/pages/Product/Edit.dart';
+import 'package:flutter_application_1/services/product_service.dart';
 
 class SecondPage extends StatefulWidget {
   const SecondPage({super.key});
@@ -12,7 +13,7 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
-  final FirestoreService firestoreService = FirestoreService();
+  final ProductService firestoreService = ProductService();
 
   @override
   Widget build(BuildContext context) {
