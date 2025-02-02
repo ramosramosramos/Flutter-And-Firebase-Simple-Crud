@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/firestore_service.dart';
-import 'package:flutter_application_1/create_product_form.dart';
-import 'package:flutter_application_1/product_model.dart';
-import 'package:flutter_application_1/update_product_form.dart';
+import 'package:flutter_application_1/services/firestore_service.dart';
+import 'package:flutter_application_1/pages/Product/Create.dart';
+import 'package:flutter_application_1/models/product_model.dart';
+import 'package:flutter_application_1/pages/Product/Edit.dart';
 
 class SecondPage extends StatefulWidget {
   const SecondPage({super.key});
@@ -38,7 +38,7 @@ class _SecondPageState extends State<SecondPage> {
                       onPressed: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => UpdateProductForm(product: product),
+                          builder: (context) => EditProductForm(product: product),
                         ),
                       ),
                     ),

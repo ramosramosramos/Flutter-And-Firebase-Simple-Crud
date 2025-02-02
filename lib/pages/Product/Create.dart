@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/firestore_service.dart';
-import 'package:flutter_application_1/product_model.dart';
+import 'package:flutter_application_1/services/firestore_service.dart';
+import 'package:flutter_application_1/models/product_model.dart';
 
 class CreateProductForm extends StatefulWidget {
   @override
@@ -19,6 +19,8 @@ class _CreateProductFormState extends State<CreateProductForm> {
     _nameController = TextEditingController();
     _priceController = TextEditingController();
   }
+
+
 
   void _saveProduct() async {
     if (_formKey.currentState!.validate()) {

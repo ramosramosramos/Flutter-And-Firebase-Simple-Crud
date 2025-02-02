@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/firestore_service.dart';
-import 'package:flutter_application_1/product_model.dart';
+import 'package:flutter_application_1/services/firestore_service.dart';
+import 'package:flutter_application_1/models/product_model.dart';
 
-class UpdateProductForm extends StatefulWidget {
+class EditProductForm extends StatefulWidget {
   final Product product;
 
-  UpdateProductForm({required this.product});
+  EditProductForm({required this.product});
 
   @override
   _UpdateProductFormState createState() => _UpdateProductFormState();
 }
 
-class _UpdateProductFormState extends State<UpdateProductForm> {
+class _UpdateProductFormState extends State<EditProductForm> {
   final _formKey = GlobalKey<FormState>();
   late TextEditingController _nameController;
   late TextEditingController _priceController;
