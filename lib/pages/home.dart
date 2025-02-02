@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/Product/Index.dart';
+import 'package:flutter_application_1/pages/product/index.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
